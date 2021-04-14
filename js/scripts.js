@@ -7,7 +7,10 @@ function validarFormulario() {
     if ( resp == false ) {
         return false;
     }
-    validaFecha();
+    resp = validaFecha();
+    if (resp==false) {
+        return false;
+    }
     return true;
 }
 function validaFecha() {
