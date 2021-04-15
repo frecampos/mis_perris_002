@@ -30,7 +30,12 @@ function validaFecha() {
     console.log('Nueva Fecha:'+fechaNuevaUsuario);
     /// fecha ingresada menor a la actual 
     if ( fechaNuevaUsuario > fechaSistema ) {
-        alert('fecha incorrecta');
+        //alert('fecha incorrecta');
+        Swal.fire({
+            icon: 'error',
+            title: 'Fecha Nacimiento',
+            text: 'fecha incorrecta'
+          });
         return false;
     }
     // minimo 18 años
@@ -40,7 +45,12 @@ function validaFecha() {
     var anos = Math.trunc( diferencia / 365 );
     console.log('Edad:'+anos);
     if ( anos < 18) {
-        alert('es menor de edad, usted tiene '+anos+' años de edad');
+        //alert('es menor de edad, usted tiene '+anos+' años de edad');
+        Swal.fire({
+            icon: 'error',
+            title: 'Fecha Nacimiento',
+            text: 'es menor de edad, usted tiene '+anos+' años de edad'
+          });
         return false;
     }
     return true;
@@ -74,7 +84,13 @@ function validaRut() {
     console.log(dv);
     var dv_usuario = rut.slice(-1).toUpperCase();
     if ( dv != dv_usuario ) {
-        alert('rut es incorrecto');
+        //alert('rut es incorrecto');
+        //Swal.fire('rut es incorrecto');
+        Swal.fire({
+            icon: 'error',
+            title: 'Rut',
+            text: 'el rut es incorrecto, verifiquelo'
+          });
         return false;
     }
     return true;
